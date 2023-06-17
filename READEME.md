@@ -1,5 +1,7 @@
 # Demo Testing For FBP Functionality
 
+> IF you finished reading this article, please read how we create branch and how commit message on git
+
 Todo List 
 
 - Create demo API
