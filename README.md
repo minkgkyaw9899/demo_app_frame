@@ -2,7 +2,7 @@
 
 > IF you finished reading this article, please read how we create branch and how commit message on git
 >
->[essential_git.md](essential_git.md)
+>[git_essential.md](git_essential.md)
 
 Todo List 
 

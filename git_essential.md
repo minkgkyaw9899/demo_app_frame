@@ -53,7 +53,7 @@ example1—Shot commit
 feat: Create splash screen
 ```
 
-example2—Shot commit 
+example2—Shot commit
 
 ```bash
 git commit -m "refactor(useFetchPosts): Split component logic into hook"
@@ -75,7 +75,7 @@ The `<scope>` can be empty (e.g. if the change is a global or difficult to assig
 
 <br/>
 
-example3—Full commit 
+example3—Full commit
 
 ```bash
 feat(user): Add user registration functionality
