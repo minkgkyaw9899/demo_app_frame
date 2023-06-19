@@ -11,7 +11,7 @@ We should create branch name by ticket no if our project is using a ticketing sy
 example
 
 - `git checkout -b mkk/FPB-1`
-- `git checkout -b FPB-2` especially for JARA
+- `git checkout -b FPB-2` #useful whe link with a project management system
 
 ### Benefits
 
