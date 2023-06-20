@@ -64,6 +64,14 @@ export const getPostById = async (postId: string): Promise<Post | null> => {
   }
 }
 
+export const findPostByUserId = async (userId: string): Promise<Post[] | null> => {
+  try {
+    return await PostModal.findMany({where: {userId}})
+  } catch (err: any) {
+    return ErrorHandler(500, err?.message)
+  }
+}
+
 export const createPost = async (data: CreatePostProps): Promise<Post> => {
   try {
     return await PostModal.create({data})
