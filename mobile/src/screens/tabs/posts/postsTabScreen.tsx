@@ -1,3 +1,4 @@
+
 import React, { type FC } from 'react'
 import { TabScreenProps } from 'src/@types/react-navigation/types'
 import { StyleSheet, Text, View } from 'react-native'
