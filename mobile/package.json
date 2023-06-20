@@ -42,7 +42,11 @@
     "react-native-reanimated": "^2.17.0",
     "react-native-safe-area-context": "^4.5.3",
     "react-native-screens": "^3.20.0",
+<<<<<<< HEAD
+    "react-native-skeleton-content": "^1.0.13",
+=======
     "react-native-skeleton-content": "^1.0.28",
+>>>>>>> 02b22494de539a3f23bfb14b72d8f98151a0c485
     "react-native-skeleton-placeholder": "^5.2.4",
     "react-native-svg": "^13.9.0",
     "react-native-toast-message": "^2.1.6",

@@ -1,5 +1,5 @@
-import {PostObj} from 'src/@types/posts/types'
-import {UserObj} from 'src/@types/users/types'
+import { PostObj } from 'src/@types/posts/types'
+import { UserObj } from 'src/@types/users/types'
 
 export type ErrorResponse = {
   error: {
@@ -41,5 +41,15 @@ export type AuthUserResponse = {
   data: {
     user: UserObj
     token: string
+  }
+}
+
+export type PostCreateResponse = {
+  meta: {
+    status: number,
+    message: string
+  }
+  data: {
+    post: PostObj
   }
 }
