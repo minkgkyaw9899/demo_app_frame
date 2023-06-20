@@ -1,28 +1,21 @@
 import React, {useEffect} from 'react'
 import 'react-native-gesture-handler'
-import { StatusBar } from 'react-native'
+import {StatusBar} from 'react-native'
 import Toast from 'react-native-toast-message'
 
 import messaging from '@react-native-firebase/messaging'
 import {PersistGate} from 'redux-persist/integration/react'
 import {SafeAreaProvider} from 'react-native-safe-area-context'
 import {NavigationContainer} from '@react-navigation/native'
-import {QueryClient, QueryClientProvider} from '@tanstack/react-query'
+import {QueryClientProvider} from '@tanstack/react-query'
 import {Provider} from 'react-redux'
 import {PERMISSIONS, request} from 'react-native-permissions'
-=======
-import { PersistGate } from 'redux-persist/integration/react'
-import { SafeAreaProvider } from 'react-native-safe-area-context'
-import { NavigationContainer } from '@react-navigation/native'
-import { QueryClientProvider } from '@tanstack/react-query'
-import { Provider } from 'react-redux'
-
 
 import RootStackNavigator from 'navigations/RootStackNavigator'
-import { toastConfig } from 'config/toastConfig'
-import store, { persistor } from './store'
-import { SplashContainer } from 'components/splash/SplashContainer'
-import { queryClient } from 'libs/react-query/reactQuery'
+import {toastConfig} from 'config/toastConfig'
+import store, {persistor} from './store'
+import {SplashContainer} from 'components/splash/SplashContainer'
+import {queryClient} from 'libs/react-query/reactQuery'
 
 const App = () => {
   useEffect(() => {
