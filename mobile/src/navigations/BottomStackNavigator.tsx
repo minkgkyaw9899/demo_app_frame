@@ -1,8 +1,7 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
 import {TabParamList} from 'src/@types/react-navigation/types'
-import {HomeTabScreen} from 'screens/home/homeTabScreen'
-import {PostsTabScreen} from 'screens/posts/PostsTabScreen'
-import {ProfileTabScreen} from 'screens/profile/ProfileTabScreen'
+import {HomeTabScreen} from 'screens/tabs/home/homeTabScreen'
+import {ProfileTabScreen} from 'screens/tabs/profile/ProfileTabScreen'
 import {
   AccountIcon,
   AccountOutlineIcon,
@@ -11,6 +10,7 @@ import {
   PlusIcon,
   PlusOutlineIcon,
 } from 'components/common/Icon'
+import {PostsTabScreen} from 'screens/tabs/posts/postsTabScreen'
 
 const Stack = createBottomTabNavigator<TabParamList>()
 

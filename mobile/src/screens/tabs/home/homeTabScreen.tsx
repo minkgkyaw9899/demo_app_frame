@@ -8,19 +8,24 @@ import {ItemSeparator} from 'components/home-tab/ItemSeparator'
 import {PostItem} from 'components/home-tab/PostItem'
 import {PostObj} from 'src/@types/posts/types'
 import {useScrollToTop} from '@react-navigation/native'
-import {useFetchPosts} from 'screens/home/hooks/useFetchPosts'
+import {useFetchPosts} from 'screens/tabs/home/hooks/useFetchPosts'
+import {PostSkeleton} from 'components/posts/PostSkeleton'
 
 type Props = TabScreenProps<'HomeTab'>
+
+const FooterComponent = ({isFetchingNextPage}: {isFetchingNextPage: boolean}) => {
+  return isFetchingNextPage ? <PostSkeleton /> : null
+}
 
 export const HomeTabScreen: FC<Props> = () => {
   const flashListRef = useRef<FlashList<PostObj>>(null)
   const {posts, postsQueries, refreshNewPosts, fetchNextPosts} = useFetchPosts()
 
-  const {isRefetching, isLoading} = postsQueries
+  const {isRefetching, isLoading, isFetchingNextPage} = postsQueries
 
   useScrollToTop(
     useRef({
-      scrollToTop: () => flashListRef.current?.scrollToOffset({offset: 0}),
+      scrollToTop: () => flashListRef.current?.scrollToOffset({offset: 50}),
     }),
   )
 
@@ -29,8 +34,11 @@ export const HomeTabScreen: FC<Props> = () => {
       <HomeNotificationHeader />
       <View style={{flexGrow: 1}}>
         <FlashList
+          ref={flashListRef}
           showsVerticalScrollIndicator={false}
           ItemSeparatorComponent={ItemSeparator}
+          ListEmptyComponent={PostSkeleton}
+          ListFooterComponent={<FooterComponent isFetchingNextPage={isFetchingNextPage} />}
           contentContainerStyle={{paddingTop: 24, backgroundColor: '#f5f5f5', paddingBottom: 50}}
           data={posts}
           keyExtractor={item => item.id}

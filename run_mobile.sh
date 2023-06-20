@@ -1,0 +1,1 @@
+cd mobile && npm start

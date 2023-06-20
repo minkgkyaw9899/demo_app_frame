@@ -6,6 +6,9 @@ import { Controller } from 'react-hook-form'
 import { Input } from 'components/common/Input'
 import { useCreatePost } from './hooks/useCreatePost'
 import { FilledButton } from 'components/common/FilledButton'
+import React, {type FC} from 'react'
+import {TabScreenProps} from '@types/react-navigation/types'
+import {Text, View} from 'react-native'
 
 type Props = TabScreenProps<'PostTab'>
 

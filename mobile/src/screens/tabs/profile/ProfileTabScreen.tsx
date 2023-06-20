@@ -1,5 +1,5 @@
 import React, {type FC} from 'react'
-import {TabScreenProps} from 'src/@types/react-navigation/types'
+import {TabScreenProps} from '@types/react-navigation/types'
 import {Container} from 'components/common/Container'
 import {useAppSelector} from 'hooks/useAppSelector'
 import {logoutUser, selectedAuthUser} from 'features/authUserSlice'
