@@ -6,3 +6,8 @@ export type PostObj = {
   createdAt: Date
   updatedAt: Date
 }
+
+export type PostCreateObj = {
+  title: string,
+  body: string
+}

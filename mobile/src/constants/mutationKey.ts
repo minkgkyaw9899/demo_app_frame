@@ -3,4 +3,5 @@ export const mutationKey = {
   updateUser: 'update user',
   deleteUser: 'delete user',
   loginUser: 'login user',
+  createPost: 'create post'
 }
