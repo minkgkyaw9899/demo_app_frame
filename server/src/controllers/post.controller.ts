@@ -3,6 +3,7 @@ import {CreatePostSchema, UpdatePostSchema} from '../schema/post.schema'
 import {
   createPost,
   deletePost,
+  findPostByUserId,
   getAllPosts,
   getPostById,
   getTotalPostsQuantity,
@@ -41,11 +42,9 @@ export const getAllPostsController = async (req: Request, res: Response, next: N
     if (isNaN(pages)) return next(createHttpError(422, 'Pages should be number type'))
 
     let skip: number,
-      take: number = 20
+      take: number = 15
 
     pages <= 1 ? (skip = 0) : (skip = (pages - 1) * take)
-
-    console.log(skip)
 
     const posts = await getAllPosts({skip, take})
 
@@ -68,6 +67,36 @@ export const getAllPostsController = async (req: Request, res: Response, next: N
         currentPages: pages,
         hasNextPage,
         nextPage,
+      },
+      data: {
+        posts,
+      },
+    })
+  } catch (err) {
+    return next(err)
+  }
+}
+
+export const getAllPostsByUserIdController = async (req: Request, res: Response, next: NextFunction) => {
+  try {
+    // let pages = req.query.pages ? parseInt(<string>req.query.pages) : 1
+    // if (isNaN(pages)) return next(createHttpError(422, 'Pages should be number type'))
+    //
+    // let skip: number,
+    //   take: number = 15
+    //
+    // pages <= 1 ? (skip = 0) : (skip = (pages - 1) * take)
+
+    const userId = req.params?.userId
+
+    if (!userId) return next(createHttpError(422, 'User id is required'))
+
+    const posts = await findPostByUserId(userId)
+
+    return res.status(200).json({
+      meta: {
+        status: 200,
+        message: 'Successfully get posts',
       },
       data: {
         posts,

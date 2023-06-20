@@ -13,9 +13,11 @@ const router = Router()
 
 router.get('/', getAllPostsController)
 
-router.get('/:id', getPostByIdController)
+router.get('/user/:id')
 
 router.post('/', validate(createPostSchema), createPostController)
+
+router.get('/:id', getPostByIdController)
 
 router.patch('/:id', validate(updatePostSchema), updatePostController)
 
